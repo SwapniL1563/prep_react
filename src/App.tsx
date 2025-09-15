@@ -2,6 +2,7 @@ import Props from "../src/components/Props"
 import State from "../src/components/State";
 import ConditionalRendering from "../src/components/Conditional _Rendering";
 import ListAndKeys from "./components/List_Keys";
+import ControlledForm from "./components/Forms";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <State/>
     <ConditionalRendering loggedIn={true}/>
     <ListAndKeys/>
+    <ControlledForm/>
    </div>
   )
 }
