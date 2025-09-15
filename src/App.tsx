@@ -3,6 +3,7 @@ import State from "../src/components/State";
 import ConditionalRendering from "../src/components/Conditional _Rendering";
 import ListAndKeys from "./components/List_Keys";
 import ControlledForm from "./components/Forms";
+import ClickBtn from "./components/Events";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <ConditionalRendering loggedIn={true}/>
     <ListAndKeys/>
     <ControlledForm/>
+    <ClickBtn name="Swapnil"/>
    </div>
   )
 }
