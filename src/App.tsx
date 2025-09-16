@@ -4,6 +4,7 @@ import ConditionalRendering from "../src/components/Conditional _Rendering";
 import ListAndKeys from "./components/List_Keys";
 import ControlledForm from "./components/Forms";
 import ClickBtn from "./components/Events";
+import Counter from "./hooks/useState";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <ListAndKeys/>
     <ControlledForm/>
     <ClickBtn name="Swapnil"/>
+    <Counter/>
    </div>
   )
 }
