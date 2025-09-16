@@ -5,6 +5,7 @@ import ListAndKeys from "./components/List_Keys";
 import ControlledForm from "./components/Forms";
 import ClickBtn from "./components/Events";
 import Counter from "./hooks/useState";
+import ThemeSwitch from "./hooks/useContext"
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
     <ConditionalRendering loggedIn={true}/>
     <ListAndKeys/>
     <ControlledForm/>
-    <ClickBtn name="Swapnil"/>
     <Counter/>
+    <ClickBtn name="Swapnil"/>
+    <ThemeSwitch/>
+    
    </div>
   )
 }
