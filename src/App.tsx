@@ -7,6 +7,7 @@ import ClickBtn from "./components/Events";
 import Counter from "./hooks/useState";
 import ThemeSwitch from "./hooks/useContext"
 import Cart from "./hooks/useReducer";
+import FocusInput from "./hooks/useRef";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <ClickBtn name="Swapnil"/>
     <ThemeSwitch/>
     <Cart/>
+    <FocusInput/>
     
    </div>
   )
