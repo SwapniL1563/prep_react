@@ -8,6 +8,7 @@ import Counter from "./hooks/useState";
 import ThemeSwitch from "./hooks/useContext"
 import Cart from "./hooks/useReducer";
 import FocusInput from "./hooks/useRef";
+import { ExpensiveCalculations } from "./hooks/useMemo";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
     <ThemeSwitch/>
     <Cart/>
     <FocusInput/>
+    <ExpensiveCalculations/>
     
    </div>
   )
