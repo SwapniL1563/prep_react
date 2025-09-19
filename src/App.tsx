@@ -9,6 +9,7 @@ import ThemeSwitch from "./hooks/useContext"
 import Cart from "./hooks/useReducer";
 import FocusInput from "./hooks/useRef";
 import { ExpensiveCalculations } from "./hooks/useMemo";
+import AppCb from "./hooks/useCallback";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
     <Cart/>
     <FocusInput/>
     <ExpensiveCalculations/>
+    <AppCb/>
     
    </div>
   )
