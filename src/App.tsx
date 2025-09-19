@@ -6,6 +6,7 @@ import ControlledForm from "./components/Forms";
 import ClickBtn from "./components/Events";
 import Counter from "./hooks/useState";
 import ThemeSwitch from "./hooks/useContext"
+import Cart from "./hooks/useReducer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Counter/>
     <ClickBtn name="Swapnil"/>
     <ThemeSwitch/>
+    <Cart/>
     
    </div>
   )
