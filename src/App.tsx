@@ -10,6 +10,7 @@ import Cart from "./hooks/useReducer";
 import FocusInput from "./hooks/useRef";
 import { ExpensiveCalculations } from "./hooks/useMemo";
 import AppCb from "./hooks/useCallback";
+import AppUseMemo from "./hooks/React.memo";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
     <FocusInput/>
     <ExpensiveCalculations/>
     <AppCb/>
+    <AppUseMemo/>
     
    </div>
   )
