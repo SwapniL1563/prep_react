@@ -4,13 +4,14 @@ import ConditionalRendering from "../src/components/Conditional _Rendering";
 import ListAndKeys from "./components/List_Keys";
 import ControlledForm from "./components/Forms";
 import ClickBtn from "./components/Events";
-import Counter from "./hooks/useState";
+// import Counter from "./hooks/useState";
 import ThemeSwitch from "./hooks/useContext"
 import Cart from "./hooks/useReducer";
 import FocusInput from "./hooks/useRef";
 import { ExpensiveCalculations } from "./hooks/useMemo";
 import AppCb from "./hooks/useCallback";
 import AppUseMemo from "./hooks/React.memo";
+import AppLazy from "./hooks/React.lazy";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
     <ConditionalRendering loggedIn={true}/>
     <ListAndKeys/>
     <ControlledForm/>
-    <Counter/>
+    {/* <Counter/> */}
     <ClickBtn name="Swapnil"/>
     <ThemeSwitch/>
     <Cart/>
@@ -28,7 +29,7 @@ function App() {
     <ExpensiveCalculations/>
     <AppCb/>
     <AppUseMemo/>
-    
+    <AppLazy/>
    </div>
   )
 }

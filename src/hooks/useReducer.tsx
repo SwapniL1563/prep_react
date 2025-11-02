@@ -1,12 +1,14 @@
 // useReducer - React hook that is used to manage complex states
 // it is an alternative to useState when-
-// state dwpend on previous state, multiple state are related
+// state depend on previous state, multiple state are related
 
 // syntax:
 
 import { useReducer } from "react";
 
 // const [state,dispatch] = useReducer(reducer,initialValue);
+
+// const [state,dispatch] = useReducer(reducer,initialVal);
 
 // here state -> current state
 // dispatch -> func used to send action
@@ -71,3 +73,32 @@ function Cart() {
 
 
 export default Cart;
+
+const initialState = { count : 0 }
+
+// reducer fn 
+function counterReducer(state,action) {
+    switch (action.type) {
+        case "INCREMENT":
+            return { count : state.count + 1}
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    case "RESET":
+      return { count: 0 };
+    default:
+      return state;
+  }
+}  
+
+function App () {
+    const [ state, dispatch ] = useReducer(counterReducer,initialState);
+
+    return (
+        <div className="p-4 text-center">
+      <h2>Count: {state.count}</h2>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+      <button onClick={() => dispatch({ type: "RESET" })}>Reset</button>
+    </div>
+  );
+}

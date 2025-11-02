@@ -33,7 +33,7 @@ export default Counter;
 // count -> state val
 // setCount -> setter fn 
 // initialVal of count = 0
-// whenver buuton is clicked react updates the state and then re-render the component to see latest value of count
+// whenver button is clicked react updates the state and then re-render the component to see latest value of count
 
 
 // problem solved:

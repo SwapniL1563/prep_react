@@ -41,6 +41,24 @@ function FocusInput(){
 
 export default FocusInput;
 
+
+
+function focusInput() {
+    const focusInputRef = useRef(null);
+
+    const focusInputClick = () => {
+        focusInputRef.current.focus();
+    }
+
+    return (
+        <div>
+            <input type="text" ref={focusInputRef} name="" id="" />
+            <button onClick={focusInputClick}>Focus Input</button>
+        </div>
+    )
+
+}
+
 // import React, { useRef, useState } from "react";
 
 // function Timer() {

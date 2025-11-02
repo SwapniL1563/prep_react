@@ -1,10 +1,11 @@
-// useMemo - react hook that memoizes(remembers) the result of expensive calaculations and only re-computes when one of dependency changes until then cacjed result ( from last re-render ) is return helps  in optimizing performance
+// useMemo - react hook that memoizes(remembers) the result of expensive calaculations and only re-computes when one of dependency changes until then cached result ( from last re-render ) is return helps  in optimizing performance
 
 import { useMemo, useState } from "react";
 
+const memoizedVal = useMemo(() => someExpCal(a,b),[abstract,b])
 // syntax:
 // const memoizedVal = useMemo(() => someExpCal(a,b),[a,b]);
-// 1st arg => fn taht return val 
+// 1st arg => fn that return val 
 // 2nd arg => dependency array
 // recomputes only when dependency array changes
 
@@ -47,6 +48,37 @@ export function ExpensiveCalculations() {
     )
 }
 
+
+// without useMemo -> on every render (even when theme changes) slow function would run causing bad performance
+// with useMemo -> slow function would only run when num changes until it cached result will be return optimising performance
+
+
+
+export function ExpensiveCalculations() {
+  const [count, setCount] = useState(0);
+  const [num, setNum] = useState(5);
+
+    // exp calc
+    const slowFunction = (num) => {
+        console.log("Calculating")
+        for(let i = 0;i < 100000;i++){
+        
+        }
+
+        return num * 2;
+    }
+
+    // useMemo - to memoize expensive cal of slow fn and run it only when num changes
+    const doubledNum = useMemo(() => slowFunction(num),[num]);
+
+    return (
+        <div>
+            <h1>Doubled Num : {doubledNum}</h1>
+            <button onClick={() => setCount(count + 1)}>Rerender</button>
+            <button onClick={() => setNum(num + 1)}>Double</button>
+        </div>
+    )
+}
 
 // without useMemo -> on every render (even when theme changes) slow function would run causing bad performance
 // with useMemo -> slow function would only run when num changes until it cached result will be return optimising performance

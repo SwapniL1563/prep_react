@@ -1,11 +1,15 @@
 // useCallback - react hook that return memoized version of callback fn 
 // It prevent a fn from being recreated on every render, unless its dependencies change
 
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 // syntax:const memoizedFn = useCallback(()=> {
 // // fn logic here
 //  },[dependency])
+
+const memoizedFn = useCallback(() => {
+
+},[])
 
 // return the reference to fn
 // 1st render -> memoized fn
@@ -23,23 +27,72 @@ import { useCallback, useState } from "react";
 
 // eg.
 
-function Button({onClick,label}) {
-    console.log(`${label} rendered`);
+// function Button({onClick,label}) {
+//     console.log(`${label} rendered`);
+//     return <button onClick={onClick}>{label}</button>
+// }
+
+// export default function AppCb(){
+//     const [count,setCount] = useState(0);
+
+//     const handleClick = useCallback(() => {
+//         console.log("Button Click");
+//     },[]);
+
+//     return (
+//         <div>
+//             <h2>Count: {count}</h2>
+//             <button onClick={() => setCount(count + 1)}>Increment</button>
+//             <Button onClick={handleClick} label="Child Button"/>
+//         </div>
+//     )
+// }
+
+
+
+function Button ({onClick,label}) {
+    console.log("Button rerendered!")
     return <button onClick={onClick}>{label}</button>
 }
 
-export default function AppCb(){
+function Parent () {
     const [count,setCount] = useState(0);
 
     const handleClick = useCallback(() => {
-        console.log("Button Click");
+        console.log("Button Clicked")
     },[]);
 
     return (
         <div>
-            <h2>Count: {count}</h2>
+            <h1>count : {count}</h1>
             <button onClick={() => setCount(count + 1)}>Increment</button>
-            <Button onClick={handleClick} label="Child Button"/>
+            <Button onClick={handleClick} label="Button"/>
+        </div>
+    )
+}
+
+// w/o useCallback any time parent re-render child (Button) also re-render
+// with useCallback the child will only re-render when dependencies change 
+
+
+// useCallback + react.memo
+const Button = React.memo(function Button ({onClick,label}) {
+    console.log("Button rerendered!")
+    return <button onClick={onClick}>{label}</button>
+})
+
+export function Parent () {
+    const [count,setCount] = useState(0);
+
+    const handleClick = useCallback(() => {
+        console.log("Button Clicked")
+    },[]);
+
+    return (
+        <div>
+            <h1>count : {count}</h1>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <Button onClick={handleClick} label="Button"/>
         </div>
     )
 }

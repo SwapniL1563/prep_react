@@ -1,5 +1,5 @@
 // State - an object that holds dyanmic data about a component
-// State - similar to memeory of component - store values that changes over time and when state updates, react re-render the components to reflect in UI
+// State - similar to memory of component - store values that changes over time and when state updates, react re-render the components to reflect in UI
 // It is mutable , internal to component and managed with useState hook
 
 import { useState } from "react";
